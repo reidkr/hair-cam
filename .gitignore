@@ -1,0 +1,8 @@
+# Ignore auto-generated files
+.venv/
+
+*.pyc
+__pycache__
+hooks/
+build-local.sh
+.dockerignore
