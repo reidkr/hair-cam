@@ -4,5 +4,5 @@
 *.pyc
 __pycache__
 hooks/
-build-local.sh
 .dockerignore
+.DS_Store

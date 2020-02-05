@@ -15,6 +15,7 @@ import json
 import streamlit as st
 import PIL
 from fastai.vision import *
+import pandas as pd
 import time
 
 # Data
@@ -22,7 +23,6 @@ with open('data/hair_type_desc.json', mode='r') as f:
     hair_type_desc = json.load(f)
 
 # Definitions
-
 
 def predict_hair_type(uploaded_file):
     """
@@ -43,6 +43,7 @@ path = os.getcwd() + '/model'
 # Load model
 model = load_learner(path, 'stage-2-resnet-50-balanced-subtype.pkl')
 
+st.image('imgs/logo.png', width=75)
 st.markdown('''
 # Hair[CAM]
 ## Hair type prediction for better hair days
@@ -53,26 +54,27 @@ h_type_chart = PIL.Image.open('imgs/hair_type_chart.png', mode='r')
 st.sidebar.image(h_type_chart, use_column_width=True)
 
 # Preloaded images
-if st.button(label='Demo'):
-    with open('imgs/jon_snow.jpg', "rb") as image:
-        f = image.read()
-        uploaded_file = BytesIO(f)
-else:
-    uploaded_file = st.file_uploader(label='Choose a photo...')
+demo = st.button(label='Demo')
+
+# demo_image = open('imgs/jon_snow.jpg', 'rb')
+# uploaded_file = st.file_uploader(label='Choose a photo...')
+uploaded_file = st.file_uploader(label='Choose a photo...')
+if demo:
+    uploaded_file = open('imgs/jon_snow.jpg', 'rb')
 
 if uploaded_file is not None:
     image = PIL.Image.open(uploaded_file, mode='r')
-    st.image(image, caption='Photo uploaded', use_column_width=True)
+    st.image(image, caption='Photo uploaded', use_column_width=True, width=400)
 
-    # Predict hair type
-
-if st.button(label='Click to get your hair type'):
-    # st.write('''
-    # \n
-    # ### Getting your hair type...
-    # ''')
+# Predict hair type
+# get_type = st.button(label='Click to get your hair type')
+# if get_type:
+# st.write('''
+# \n
+# ### Getting your hair type...
+# ''')
     with st.spinner(text='Getting your hair type...'):
-        time.sleep(3)
+        time.sleep(2)
         st.success('Done!')
     label, prob = predict_hair_type(uploaded_file)  # Make prediction
     hair_types = ['1', '2A', '2B', '2C', '3A', '3B',
@@ -85,7 +87,10 @@ if st.button(label='Click to get your hair type'):
     h_type = hair_types[int(label)]
     st.write(f'### Your hair type is `{h_type}`!')
     st.balloons()
-    # st.write(f'Confidence: {prob}') # Load into pandas and use to report
+    st.write('### Confidence:')
+    # Load into pandas and use to report
+    prob = pd.DataFrame(prob, index=hair_types).T
+    st.dataframe(prob, height=100)
 
     # About your hair type
 
@@ -102,4 +107,4 @@ if st.button(label='Click to get your hair type'):
         ### Famous people with similar hair type:
         ''')
     celeb_image = PIL.Image.open(f'imgs/{h_type}.jpg')
-    st.image(celeb_image, use_column_width=True)
+    st.image(celeb_image, use_column_width=True, width=400)
