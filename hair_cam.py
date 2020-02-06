@@ -74,7 +74,7 @@ if uploaded_file is not None:
 # ### Getting your hair type...
 # ''')
     with st.spinner(text='Getting your hair type...'):
-        time.sleep(2)
+        time.sleep(3)
         st.success('Done!')
     label, prob = predict_hair_type(uploaded_file)  # Make prediction
     hair_types = ['1', '2A', '2B', '2C', '3A', '3B',
@@ -86,7 +86,6 @@ if uploaded_file is not None:
     #     st.write('You selected: ', thickness)
     h_type = hair_types[int(label)]
     st.write(f'### Your hair type is `{h_type}`!')
-    st.balloons()
     st.write('### Confidence:')
     # Load into pandas and use to report
     prob = pd.DataFrame(prob, index=hair_types).T
