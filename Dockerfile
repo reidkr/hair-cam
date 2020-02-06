@@ -1,4 +1,4 @@
-# API_VERSION 0.1
+# API_VERSION 1.0
 FROM python:3.7-slim-buster
 MAINTAINER reidkr876@gmail.com
 

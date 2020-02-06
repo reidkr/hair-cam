@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+
+  hair-cam:
+    container_name: hair-cam
+    hostname: hair-cam
+    image: reidkr/hair-cam:latest
+    ports:
+      - 8501:8501
+  reverse:
+    container_name: reverse
+    hostname: reverse
+    image: nginx:1.17.8
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /Users/reidkr/.etc/nginx/nginx.conf:/etc/nginx
