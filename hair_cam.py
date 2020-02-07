@@ -10,7 +10,6 @@ This module implements a CNN trained to recognize hair type.
 """
 
 import os
-from io import BytesIO
 import json
 import streamlit as st
 import PIL

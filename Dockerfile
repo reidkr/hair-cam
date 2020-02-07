@@ -16,7 +16,11 @@ RUN pip install streamlit python-dotenv flask fastai
 COPY . .
 
 # Expose port:
-EXPOSE 8501
+# EXPOSE 8501
+
+# This allows Heroku bind its PORT the Apps port
+# since Heroku needs to use its own PORT before the App can be made accessible to the World
+EXPOSE $PORT
 
 # Run application:
-ENTRYPOINT ["streamlit", "run", "hair_cam.py"]
+ENTRYPOINT "streamlit run hair_cam.py --server.port $PORT"
