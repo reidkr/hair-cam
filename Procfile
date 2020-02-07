@@ -1,0 +1,1 @@
+web: streamlit run hair_cam.py --server.port $PORT --browser.serverAddress https://hair-cam.herokuapp.com

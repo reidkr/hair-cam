@@ -16,4 +16,4 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - /Users/reidkr/.etc/nginx/nginx.conf:/etc/nginx
+      - /etc/nginx:/etc/nginx
