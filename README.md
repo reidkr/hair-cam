@@ -1,4 +1,4 @@
-![Hair-CAM](imgs/logo.png)
+![Hair-CAM](imgs/logo.png | width=20)
 # [Hair[CAM]](http://hair-cam.herokuapp.com)
 
 > Hair type prediction for better hair days
