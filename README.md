@@ -1,26 +1,68 @@
-![Hair-CAM](imgs/logo.png | width=20)
-# [Hair[CAM]](http://hair-cam.herokuapp.com)
+# Hair[CAM]<a href="http://hair-cam.herokuapp.com"><img src="imgs/logo.png" alt="hair[cam]" width="30"/>
 
 > Hair type prediction for better hair days
-
-<!-- > Hair-CAM is a Streamlit app that uses hair data to      -->
 
 [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://hair-cam.herokuapp.com)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 [![GitHub release](https://img.shields.io/github/release/Naereen/StrapDown.js.svg)](https://GitHub.com/Naereen/StrapDown.js/releases/)
 
-![Hair types](imgs/hair_type_chart.png)
+__What's your hair type, is it straight, wavy, curly or kinky...? How loose are your curls?__
 
-## Table of Contents
+<img src="imgs/hair_types.png" alt="drawing" height="250"/> <img src="imgs/hair_types_examples.png" alt="drawing" height="250"/> 
 
-### Project Overview
+<!-- ## Table of Contents -->
 
-The global market for hair care products is worth over $80 B with a CAGR of 3.55%. However, navigating this space to find the right products can not only be costly but can also be daunting given the number of factors (e.g. hair type, porosity and hair styling techniques) to consider when formulating a healthy hair regimen. Hair-CAM aims to make it easy to understand these factors, with current support for hair type recognition. The system uses convolutional neural networks trained on a image dataset labeled across various hair types.
+## Project Overview
 
-## Getting started
+The global market for hair care products is worth over $80 B with a CAGR of 3.55%. However, navigating this space to find the right products can not only be costly but can also be daunting given the number of factors (e.g. hair type, porosity and hair styling techniques) to consider when formulating a healthy hair regimen. Hair[CAM] aims to make it easy to understand these factors, with current support for hair type recognition. To identify different hair types, Hair[CAM] uses a convolutional neural network trained on a labeled image dataset.
 
-### Prerequisites
+## Getting Started
 
-### Installing
- 
+To run Hair[CAM] locally,
+
+### Clone 
+
+Clone repo to local machine:
+
+`$ git clone https://github.com/ricky89/Hair-CAM.git`
+
+### Install
+
+#### w/ Pip
+
+```bash
+$ pip install -r requirements.txt
+$ streamlit run hair_cam.py
+```
+
+#### \w Docker
+
+```bash
+$ ./build-local.sh
+$ docker run -d --name hair-cam -p 8501:8501 reidkr/hair-cam:latest
+```
+
+## Usage
+
+> Simply upload a photo to the app and Hair[CAM] will determine your hair type
+
+<!-- ![](imgs/hair-cam-screencast.gif) -->
+
+<img src="imgs/hair-cam-screen.gif" alt="drawing" height="450"/>
+
+#### (Optional)
+
+To run model, independently:
+
+```bash
+$ python demo.py
+```
+<!-- ## Workflow summary -->
+
+## License
+
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
+
+- [MIT license](https://opensource.org/licenses/mit-license.php)
+- Copyright 2020 © Kemar Reid
