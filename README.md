@@ -1,4 +1,4 @@
-# Hair[CAM]<a href="http://hair-cam.herokuapp.com"><img src="imgs/logo.png" alt="hair[cam]" width="30"/>
+# Hair[CAM]<a href="http://hair-cam.herokuapp.com"><img src="streamlit-app/imgs/logo.png" alt="hair[cam]" width="30"/>
 
 > Hair type prediction for better hair days
 
@@ -9,7 +9,7 @@
 
 __What's your hair type, is it straight, wavy, curly or kinky...? How loose are your curls?__
 
-<img src="imgs/hair_types.png" alt="drawing" height="250"/> <img src="imgs/hair_types_examples.png" alt="drawing" height="250"/> 
+<img src="streamlit-app/imgs/hair_types.png" alt="drawing" height="250"/> <img src="imgs/hair_types_examples.png" alt="drawing" height="250"/> 
 
 <!-- ## Table of Contents -->
 
@@ -25,7 +25,7 @@ To run Hair[CAM] locally,
 
 Clone repo to local machine:
 
-`$ git clone https://github.com/ricky89/Hair-CAM.git`
+`$ git clone https://github.com/reidkr/Hair-CAM.git`
 
 ### Install
 
@@ -49,7 +49,7 @@ $ docker run -d --name hair-cam -p 8501:8501 reidkr/hair-cam:latest
 
 <!-- ![](imgs/hair-cam-screencast.gif) -->
 
-<img src="imgs/hair-cam-screen.gif" alt="drawing" height="450"/>
+<img src="streamlit-app/imgs/hair-cam-screen.gif" alt="drawing" height="450"/>
 
 #### (Optional)
 
