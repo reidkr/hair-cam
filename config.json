@@ -1,0 +1,54 @@
+{
+    "name": "Hair-CAM_ResNet",
+    "n_gpu": 1,
+
+    "arch": {
+        "type": "resnet18",
+        "args": {
+            "num_classes": 10,
+            "use_pretrained": true
+        }
+    },
+    "data_loader": {
+        "type": "get_haircam_data_loaders",
+        "args":{
+            "csv_file": "/Users/reidkr/lab/data/hair-cam/sample_clean.csv",
+            "data_dir": "/Users/reidkr/lab/data/hair-cam/",
+            "batch_size": 8,
+            "shuffle": true,
+            "num_workers": 2
+        }
+    },
+    "optimizer": {
+        "type": "Adam",
+        "args":{
+            "lr": 0.0001,
+            "weight_decay": 0,
+            "amsgrad": false
+        }
+    },
+    "loss": "cross_entropy_loss",
+    "metrics": [
+        "accuracy"
+    ],
+    "lr_scheduler": {
+        "type": "OneCycleLR",
+        "args": {
+            "max_lr": 0.03,
+            "steps_per_epoch": 50,
+            "epochs": 12
+        }
+    },
+    "trainer": {
+        "epochs": 4,
+
+        "save_dir": "saved/",
+        "save_period": 100,
+        "verbosity": 2,
+
+        "monitor": "min val_loss",
+        "early_stop": 10,
+
+        "tensorboard": true
+    }
+}

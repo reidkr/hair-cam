@@ -15,7 +15,7 @@ __What's your hair type, is it straight, wavy, curly or kinky...? How loose are 
 
 ## Project Overview
 
-The global market for hair care products is worth over $80 B with a CAGR of 3.55%. However, navigating this space to find the right products can not only be costly but can also be daunting given the number of factors (e.g. hair type, porosity and hair styling techniques) to consider when formulating a healthy hair regimen. Hair[CAM] aims to make it easy to understand these factors, with current support for hair type recognition. To identify different hair types, Hair[CAM] uses a convolutional neural network trained on a labeled image dataset.
+The global market for hair care products is worth over $80 B with a CAGR of 3.55%. However, navigating this space to find the right products can not only be costly but can also be daunting given the number of factors (e.g. hair type, porosity and hair styling techniques) to consider when formulating a healthy hair regimen. Hair[CAM] aims to make it easy to understand these factors, with current support for hair type recognition. To identify different hair types, Hair[CAM] uses convolutional neural networks trained on a labeled image dataset.
 
 ## Getting Started
 

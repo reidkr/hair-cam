@@ -1,6 +1,7 @@
 # Ignore auto-generated files
+saved/
 .venv/
-
+.env
 *.pyc
 __pycache__
 hooks/
