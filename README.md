@@ -9,7 +9,7 @@
 
 __What's your hair type, is it straight, wavy, curly or kinky...? How loose are your curls?__
 
-<img src="streamlit-app/imgs/hair_types.png" alt="drawing" height="250"/> <img src="imgs/hair_types_examples.png" alt="drawing" height="250"/> 
+<img src="streamlit-app/imgs/hair_types.png" alt="drawing" height="250"/> <img src="streamlit-app/imgs/hair_types_examples.png" alt="drawing" height="250"/> 
 
 <!-- ## Table of Contents -->
 
